@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
 const notes = require("./Develop/db/db.json");
-const gUI = require("generate-unique-id");
+let uniqid = require("uniqid");
 
 const app = express();
 const PORT = 3001;
@@ -18,8 +18,15 @@ app.get("/notes", (req, res) =>
   res.sendFile(path.join(__dirname, "Develop/public/notes.html"))
 );
 
+//api get request
 app.get("/api/notes", (req, res) => res.json(notes));
 
+//post method for the api
+app.post("/api/notes", (req, res) => {
+  res.json(`${req.method} request received`);
+});
+
+//server running on...
 app.listen(PORT, () =>
   console.log(`Example app listening at http://localhost:${PORT}`)
 );
