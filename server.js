@@ -10,7 +10,7 @@ const port = process.env.PORT || 3001;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static("public"));
+// app.use(express.static("public"));
 
 //default response to send back the index.html/landing page
 app.get("/", (req, res) => {
