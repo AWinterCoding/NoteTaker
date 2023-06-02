@@ -65,4 +65,4 @@ app.post("/api/notes", (req, res) => {
 });
 
 //server running on...
-app.listen(PORT, () => console.log(`App listening on port ${PORT}`));
+app.listen(port, () => console.log(`App listening on port ${port}`));
