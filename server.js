@@ -9,11 +9,13 @@ const app = express();
 const PORT = 3001;
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static("public"));
 
 //default response to send back the index.html/landing page
-app.get("/", (req, res) =>
-  res.sendFile(path.join(__dirname, "Develop/public/index.html"))
-);
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "Develop/public/index.html"));
+});
 
 //response to send back the notes page
 app.get("/notes", (req, res) =>
