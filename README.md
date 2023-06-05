@@ -1,18 +1,19 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-  
+
 # Note Taker
 
 ## Description
 
 A simple application for taking and storing notes
+![Alt text](Assets/NoteTaker.PNG)
+Live app: https://note-taker-awintercoding.herokuapp.com/
 
 ## Table of Contents
 
-*[Installation](#installation)
-*[Contributions](#contributions)
-*[Testing](#testing)
-*[License](#license)
-*[Questions](#questions)
+_[Installation](#installation)
+_[Contributions](#contributions)
+_[Testing](#testing)
+_[License](#license) \*[Questions](#questions)
 
 ## Installation
 
