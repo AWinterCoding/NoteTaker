@@ -3,7 +3,6 @@ const path = require("path");
 const notes = require("./Develop/db/db.json");
 let uniqid = require("uniqid");
 const fs = require("fs");
-const util = require("util");
 
 const app = express();
 const port = process.env.PORT || 33920;
@@ -23,7 +22,16 @@ app.get("/notes", (req, res) =>
 );
 
 //api get request
-app.get("/api/notes", (req, res) => res.json(notes));
+app.get("/api/notes", (req, res) => {
+  fs.readFile("Develop/db/db.json", "utf8", (err, data) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(data);
+      res.send(data);
+    }
+  });
+});
 
 //post method for the api
 app.post("/api/notes", (req, res) => {
@@ -48,7 +56,7 @@ app.post("/api/notes", (req, res) => {
           if (err) {
             console.log(err);
           } else {
-            console.info("Note written to file");
+            console.log("Note written to file");
           }
         });
       }
